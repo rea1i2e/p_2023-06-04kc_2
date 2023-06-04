@@ -1,55 +1,44 @@
+jQuery(function ($) {
+	$("#js-menu").click(function () {
+		$("body").toggleClass("is-drawerActive");
+		if ($(this).attr("aria-expanded") == "false") {
+			$(this).attr("aria-expanded", true);
+			$("#js-drawer").attr("aria-hidden", "false");
+			// $("#js-drawer").addClass("is-active");
+			$("html,body").css("overflow", "hidden");
+		} else {
+			$(this).attr("aria-expanded", false);
+			$("#js-drawer").attr("aria-hidden", "true");
+			// $("#js-drawer").removeClass("is-active");
+			$("html,body").css("overflow", "initial");
+			$(".js-sub-menu").attr("aria-expanded", false);
+			$(".js-sub-menu").attr("aria-expanded", false);
+			$("#js-sub-drawer").attr("aria-hidden", "true");
+		}
+	});
 
-jQuery(function ($) { // この中であればWordpressでも「$」が使用可能になる
+	$(".js-sub-menu").click(function () {
+		const this_category = $(this).data("category");
+		console.log(this_category);
 
-  var topBtn = $('.pagetop');
-  topBtn.hide();
+		// サブメニューの開閉
+		if ($(this).attr("aria-expanded") == "false") {
+			$(this).attr("aria-expanded", true);
+			$("#js-sub-drawer").attr("aria-hidden", "false");
+		} else {
+			$(this).attr("aria-expanded", false);
+			$("#js-sub-drawer").attr("aria-hidden", "true");
+		}
 
-  // ボタンの表示設定
-  $(window).scroll(function () {
-    if ($(this).scrollTop() > 70) {
-      // 指定px以上のスクロールでボタンを表示
-      topBtn.fadeIn();
-    } else {
-      // 画面が指定pxより上ならボタンを非表示
-      topBtn.fadeOut();
-    }
-  });
+		// 該当するサブメニューを表示
+		$(".js-sub-drawer-menu").each(function () {
+			const target_data = $(this).data("target");
+			$(this).removeClass("is-active");
 
-    // ハンバーガーメニュー
-  $('.js-hamburger').on('click', function () {
-    $(this).toggleClass('is-open');
-    $('.js-header-nav').toggleClass('is-open');
-  });
-
-  // メニューが開いているときにどこかタップすると、メニューが閉じる
-  $('.js-header-nav').on('click', function () {
-    $('.js-header-nav').toggleClass('is-open');
-    $('.js-hamburger').removeClass('is-open');
-  });
-
-
-  // ボタンをクリックしたらスクロールして上に戻る
-  topBtn.click(function () {
-    $('body,html').animate({
-      scrollTop: 0
-    }, 300, 'swing');
-    return false;
-  });
-
-  // スムーススクロール (絶対パスのリンク先が現在のページであった場合でも作動)
-  
-  $(document).on('click', 'a[href*="#"]', function () {
-    let time = 400;
-    let header = $('header').innerHeight();
-    let target = $(this.hash);
-    if (!target.length) return;
-    let targetY = target.offset().top - header;
-    $('html,body').animate({ scrollTop: targetY }, time, 'swing');
-    return false;
-  });
-  
-  //jQueryが機能するか、テスト用
-  $(".js-test").click(function () {
-    $(this).css("color", "red");
-  });
+			if (this_category === target_data) {
+				console.log(target_data);
+				$(this).addClass("is-active");
+			}
+		});
+	});
 });

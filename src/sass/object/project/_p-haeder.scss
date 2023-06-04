@@ -1,0 +1,68 @@
+@use "global" as *;
+@use "sass:math";
+
+.p-header {
+}
+
+.p-header__inner.l-inner {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: inherit;
+}
+
+.p-header__logo {
+  position: relative;
+  z-index: 10;
+}
+
+.p-header__menu-button {
+  margin-left: auto;
+  position: relative;
+  z-index: 10;
+  width: rem(45);
+  height: inherit;
+  background-color: pink;
+}
+
+.p-header__gnav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin-left: auto;
+  background-color: beige;
+  transform: translateX(100%);
+  transition: all 0.3s ease-in-out;
+  @include mq() {
+    height: inherit;
+  }
+}
+
+.p-header__gnav-items {
+  padding-top: rem(50);
+  @include mq() {
+    display: flex;
+    height: inherit;
+
+  }
+}
+
+.p-header__gnav-item {
+  height: inherit;
+  background-color: green;
+}
+
+.p-header__gnav-item a {
+  display: inline-flex;
+  height: inherit;
+  align-items: center;
+  padding: 0 1em;
+}
+
+
+// active 
+.p-header__gnav[aria-hidden="false"] {
+  transform: translateX(0);
+}

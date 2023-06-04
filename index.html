@@ -32,85 +32,89 @@
 				<a href="">logo</a>
 			</h1>
 
-			<button class="p-header__menu-button c-menu-button"></button>
-			
-			<nav class="p-header__gnav">
+			<button class="p-header__menu-button c-menu-button" id="js-menu" aria-controls="js-drawer" aria-expanded="false" aria-label="メニューを開閉する"></button>
+
+			<nav class="p-header__gnav" id="js-drawer" aria-hidden="true">
 				<ul class="p-header__gnav-items">
-					<li class="p-header__gnav-item1">
-						<a href="#">news</a>
+					<li class="p-header__gnav-item">
+						<button class="p-header__sub-menu-button js-sub-menu" data-category="news" aria-controls="js-drawer" aria-expanded="false" aria-label="サブメニューを開閉する">
+							news
+						</button>
 					</li>
-					<li class="p-header__gnav-item1">
-						<a href="#">service</a>
+					<li class="p-header__gnav-item">
+						<button class="p-header__sub-menu-button js-sub-menu" data-category="service" aria-controls="js-drawer" aria-expanded="false" aria-label="サブメニューを開閉する">
+							service
+						</button>
 					</li>
 				</ul>
 			</nav>
 		</div>
 	</header>
 
-	<div class="l-drawer p-drawer">
-		<div class="p-drawer__inner l-inner">
-			<ul class="p-drawer__menus">
-				<li class="p-dwawer__menu">
-					<h2 class="p-drawer__heading">
+	<div class="l-sub-drawer p-sub-drawer" id="js-sub-drawer" aria-hidden="true">
+		<div class="p-sub-drawer__inner l-inner">
+			<ul class="p-sub-drawer__menus">
+				<li class="p-sub-drawer__menu js-sub-drawer-menu" data-target="news">
+					<h2 class="p-sub-drawer__heading">
 						news
 					</h2>
-					<ul class="p-drawer__menu-items">
+					<ul class="p-sub-drawer__menu-items">
 						<li class="p-dwraper__menu-item">
 							<a href="#">
-								drawer-menu-item1
+								sub-drawer-menu-item1
 							</a>
-							<ul class="p-drawer__sub-menu-items">
-								<li class="p-drawer__sub-menu-item">
-									<a href="#">drawer-sub-menu-item1-1</a>
+							<ul class="p-sub-drawer__sub-menu-items">
+								<li class="p-sub-drawer__sub-menu-item">
+									<a href="#">sub-drawer-sub-menu-item1-1</a>
 								</li>
-								<li class="p-drawer__sub-menu-item">
-									<a href="#">drawer-sub-menu-item1-2</a>
+								<li class="p-sub-drawer__sub-menu-item">
+									<a href="#">sub-drawer-sub-menu-item1-2</a>
 								</li>
 							</ul>
 						</li>
 						<li class="p-dwraper__menu-item">
 							<a href="#">
-								drawer-menu-item2
+								sub-drawer-menu-item2
 							</a>
-							<ul class="p-drawer__sub-menu-items">
-								<li class="p-drawer__sub-menu-item">
-									<a href="#">drawer-sub-menu-item2-1</a>
+							<ul class="p-sub-drawer__sub-menu-items">
+								<li class="p-sub-drawer__sub-menu-item">
+									<a href="#">sub-drawer-sub-menu-item2-1</a>
 								</li>
-								<li class="p-drawer__sub-menu-item">
-									<a href="#">drawer-sub-menu-item2-2</a>
+								<li class="p-sub-drawer__sub-menu-item">
+									<a href="#">sub-drawer-sub-menu-item2-2</a>
 								</li>
 							</ul>
 						</li>
 					</ul>
 				</li>
-				<li class="p-dwawer__menu">
-					<h2 class="p-drawer__heading">
+				<li class="p-sub-drawer__menu js-sub-drawer-menu" data-target="service">
+					<h2 class="p-sub-drawer__heading">
 						service
 					</h2>
-					<ul class="p-drawer__menu-items">
-						<li class="p-dwraper__menu-item">
+					<ul class="p-sub-drawer__menu-items">
+						<li class="p-sub-drawer__menu-item">
 							<a href="#">
-								drawer-menu-item1
+								sub-drawer-menu-item1
 							</a>
-							<ul class="p-drawer__sub-menu-items">
-								<li class="p-drawer__sub-menu-item">
-									<a href="#">drawer-sub-menu-item1-1</a>
+							<ul class="p-sub-drawer__sub-menu-items">
+								<li class="p-sub-drawer__sub-menu-item">
+									<a href="#">sub-drawer-sub-menu-item1-1</a>
 								</li>
-								<li class="p-drawer__sub-menu-item">
-									<a href="#">drawer-sub-menu-item1-2</a>
+								<li class="p-sub-drawer__sub-menu-item">
+									<a href="#">sub-drawer-sub-menu-item1-2</a>
 								</li>
 							</ul>
 						</li>
 						<li class="p-dwraper__menu-item">
 							<a href="#">
-								drawer-menu-item2
+								sub-drawer-menu-item2
 							</a>
-							<ul class="p-drawer__sub-menu-items">
-								<li class="p-drawer__sub-menu-item">
-									<a href="#">drawer-sub-menu-item2-1</a>
+							<ul class="p-sub-drawer__sub-menu-items">
+								<li class="p-sub-drawer__sub-menu-item">
+									<a href="#">sub-drawer-sub-menu-item2-1</a>
 								</li>
-								<li class="p-drawer__sub-menu-item">
-									<a href="#">drawer-sub-menu-item2-2</a>
+								<li class="p-sub-drawer__sub-menu-item">
+									<a href="#">sub-drawer-sub-menu-item2-2</a>
 								</li>
 							</ul>
 						</li>

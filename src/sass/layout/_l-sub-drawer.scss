@@ -1,0 +1,18 @@
+@use 'global' as *;
+@use 'sass:math';
+
+.l-sub-drawer {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin-left: auto;
+	background-color: pink;
+	transform: translateX(100%);
+	transition: all 0.3s ease-in-out;
+}
+
+.l-sub-drawer[aria-hidden="false"] {
+	transform: translateX(0);
+}

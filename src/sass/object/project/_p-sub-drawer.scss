@@ -1,0 +1,14 @@
+@use 'global' as *;
+@use 'sass:math';
+
+.p-sub-drawer {
+	padding-top: rem(50);
+}
+
+.p-sub-drawer__menu {
+	display: none;
+}
+
+.p-sub-drawer__menu.is-active {
+	display: block;
+}

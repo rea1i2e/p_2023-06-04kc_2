@@ -1,0 +1,39 @@
+@use "global" as *;
+@use "sass:math";
+
+.c-menu-button {
+  position: relative;
+  display: inline-block;
+  padding: 0;
+}
+
+.c-menu-button::before {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: black;
+  content: "";
+  transform: translateY(#{rem(-8)});
+  transition: all 0.3s ease-in-out;
+}
+
+.c-menu-button::after {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: black;
+  content: "";
+  transform: translateY(#{rem(8)});
+  transition: all 0.3s ease-in-out;
+}
+
+.c-menu-button[aria-expanded="true"]::before {
+  transform: translateY(0) rotate(45deg);
+}
+
+.c-menu-button[aria-expanded="true"]::after {
+  transform: translateY(0) rotate(-45deg);
+  // transform: rotate(-45deg);
+}
